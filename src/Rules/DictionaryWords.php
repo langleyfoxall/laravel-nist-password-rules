@@ -5,7 +5,7 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class BreachedPasswords
+ * Class DictionaryWords
  *
  * Implements the 'Dictionary words' recommendation
  * from NIST SP 800-63B section 5.1.1.2.
