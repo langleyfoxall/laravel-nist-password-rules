@@ -5,7 +5,7 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class DictionaryWords
+ * Class DictionaryWords.
  *
  * Implements the 'Dictionary words' recommendation
  * from NIST SP 800-63B section 5.1.1.2.
@@ -27,8 +27,9 @@ class DictionaryWords implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)
