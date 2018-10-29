@@ -5,7 +5,7 @@
 *Work in progress*
 
 This package provides Laravel validation rules that follow the password related
-recommendations found in [NIST Special Publication 800-63B sections 5.1.1.*](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5).
+recommendations found in [NIST Special Publication 800-63B section 5](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5).
 
 It also provides methods to return validation rules arrays for various 
 scenarios, such as register, login, and password changes. These arrays can
