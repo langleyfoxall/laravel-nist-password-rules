@@ -5,7 +5,7 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class ContextSpecificWords
+ * Class ContextSpecificWords.
  *
  * Implements the 'Context-specific words' recommendation
  * from NIST SP 800-63B section 5.1.1.2.
@@ -22,7 +22,7 @@ class ContextSpecificWords implements Rule
         $text = config('app.name');
         $text .= ' ';
         $text .= str_replace(
-            ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.',],
+            ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
             ' ',
             config('app.url'));
         $text .= ' ';
@@ -30,7 +30,7 @@ class ContextSpecificWords implements Rule
 
         $words = explode(' ', strtolower($text));
 
-        foreach($words as $key => $word) {
+        foreach ($words as $key => $word) {
             if (strlen($word) < 3) {
                 unset($words[$key]);
             }
@@ -42,15 +42,16 @@ class ContextSpecificWords implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)
     {
         $value = strtolower($value);
 
-        foreach($this->words as $word) {
+        foreach ($this->words as $word) {
             if (stripos($value, $word) !== false) {
                 return false;
             }
