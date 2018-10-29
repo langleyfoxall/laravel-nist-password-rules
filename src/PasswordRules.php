@@ -25,17 +25,9 @@ abstract class PasswordRules
 
     public static function changePassword($username, $oldPassword)
     {
-        return [
-            'required',
-            'string',
-            'min:8',
-            'confirmed',
+        return array_merge(self::register($username), [
             'different:'.$oldPassword,
-            new DictionaryWords(),
-            new ContextSpecificWords($username),
-            new DerivativesOfContextSpecificWords($username),
-            new BreachedPasswords(),
-        ];
+        ]);
     }
 
     public static function login()
