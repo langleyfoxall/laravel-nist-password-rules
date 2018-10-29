@@ -20,7 +20,7 @@ TODO
 TODO
 
 ```php
-// Registration
+// Register
 $this->validate($request, [
     'email' => 'required',
     'password' => PasswordRules::register($request->email),
