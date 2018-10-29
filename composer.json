@@ -9,7 +9,10 @@
             "email": "jordan@langleyfoxall.co.uk"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/contracts": "^5.1",
+        "divineomega/laravel-password-exposed-validation-rule": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "LangleyFoxall\\LaravelNISTPasswordRules\\": "src/"
