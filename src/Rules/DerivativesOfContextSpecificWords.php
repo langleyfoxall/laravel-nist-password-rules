@@ -5,12 +5,12 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class ContextSpecificWordsDerivatives
+ * Class DerivativesOfContextSpecificWords
  *
  * Implements the 'Context-specific words' recommendation with 'derivatives thereof'.
  * from NIST SP 800-63B section 5.1.1.2.
  */
-class ContextSpecificWordsDerivatives extends ContextSpecificWords implements Rule
+class DerivativesOfContextSpecificWords extends ContextSpecificWords implements Rule
 {
     private $words = [];
 

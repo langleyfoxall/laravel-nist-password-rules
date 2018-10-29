@@ -17,7 +17,7 @@ class ContextSpecificWords implements Rule
     /**
      * ContextSpecificWords constructor.
      */
-    public function __construct()
+    public function __construct($username)
     {
         $text = config('app.name');
         $text .= ' ';
@@ -25,6 +25,8 @@ class ContextSpecificWords implements Rule
             ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.',],
             ' ',
             config('app.url'));
+        $text .= ' ';
+        $text .= $username;
 
         $words = explode(' ', strtolower($text));
 
