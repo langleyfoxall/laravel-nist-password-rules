@@ -35,6 +35,7 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
             similar_text($value, $word, $percentage);
             if ($percentage >= 75) {
                 $this->detectedWord = $word;
+
                 return false;
             }
         }
