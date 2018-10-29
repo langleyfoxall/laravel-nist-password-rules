@@ -13,6 +13,7 @@ use Illuminate\Contracts\Validation\Rule;
 class DerivativesOfContextSpecificWords extends ContextSpecificWords implements Rule
 {
     private $words = [];
+    private $detectedWord = null;
 
     /**
      * Determine if the validation rule passes.
@@ -33,6 +34,7 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
 
             similar_text($value, $word, $percentage);
             if ($percentage >= 75) {
+                $this->detectedWord = $word;
                 return false;
             }
         }
@@ -47,6 +49,6 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
      */
     public function message()
     {
-        return 'The :attribute is similar to a context-specific word.';
+        return 'The :attribute can not be similar to the word \''.$this->detectedWord.'\'.';
     }
 }

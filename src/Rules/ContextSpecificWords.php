@@ -13,6 +13,7 @@ use Illuminate\Contracts\Validation\Rule;
 class ContextSpecificWords implements Rule
 {
     private $words = [];
+    private $detectedWord = null;
 
     /**
      * ContextSpecificWords constructor.
@@ -53,6 +54,7 @@ class ContextSpecificWords implements Rule
 
         foreach ($this->words as $word) {
             if (stripos($value, $word) !== false) {
+                $this->detectedWord = $word;
                 return false;
             }
         }
@@ -67,6 +69,6 @@ class ContextSpecificWords implements Rule
      */
     public function message()
     {
-        return 'The :attribute contains a context-specific word.';
+        return 'The :attribute can not contain the word \''.$this->detectedWord.'\'.';
     }
 }

@@ -44,6 +44,6 @@ class DictionaryWords implements Rule
      */
     public function message()
     {
-        return 'The :attribute is a common dictionary word.';
+        return 'The :attribute can not be a dictionary word.';
     }
 }

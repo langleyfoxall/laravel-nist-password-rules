@@ -24,7 +24,7 @@ class BreachedPasswords extends PasswordExposed implements Rule
         parent::__construct($passwordExposedChecker);
 
         $this->setMessage(
-            'The :attribute is found in a third party data breach.'
+            'The :attribute was found in a third party data breach, and can not be used.'
         );
     }
 }
