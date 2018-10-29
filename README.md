@@ -18,12 +18,21 @@ TODO
 TODO
 
 ```php
+// Registration
 $this->validate($request, [
     'email' => 'required',
-    'password' => PasswordRules::register(),
+    'password' => PasswordRules::register($request->email),
 ]);
 
-PasswordRules::register();
-PasswordRules::login();
-PasswordRules::changePassword();
+// Change Password
+$this->validate($request, [
+    'old_password' => 'required',
+    'password' => PasswordRules::changePassword($request->email, $request->old_password),
+]);
+
+// Login
+$this->validate($request, [
+    'email' => 'required',
+    'password' => PasswordRules::login(),
+]);
 ```
