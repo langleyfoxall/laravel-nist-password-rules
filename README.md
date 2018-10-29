@@ -1,5 +1,7 @@
 # Laravel NIST Password Rules
 
+[![StyleCI](https://github.styleci.io/repos/154853082/shield?branch=master)](https://github.styleci.io/repos/154853082)
+
 *Work in progress*
 
 This package provides Laravel validation rules that follow the password related
