@@ -55,6 +55,7 @@ class ContextSpecificWords implements Rule
         foreach ($this->words as $word) {
             if (stripos($value, $word) !== false) {
                 $this->detectedWord = $word;
+
                 return false;
             }
         }
