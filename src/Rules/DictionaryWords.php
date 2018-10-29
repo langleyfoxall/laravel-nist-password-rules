@@ -33,7 +33,7 @@ class DictionaryWords implements Rule
      */
     public function passes($attribute, $value)
     {
-        return !in_array(trim($value), $this->words);
+        return !in_array(strtolower(trim($value)), $this->words);
     }
 
     /**
