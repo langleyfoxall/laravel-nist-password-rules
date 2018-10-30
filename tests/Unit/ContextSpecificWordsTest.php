@@ -67,5 +67,4 @@ class ContextSpecificWordsTest extends TestCase
         $rule = (new ContextSpecificWords(self::$username));
         $this->assertEquals('The :attribute can not contain the word \'\'.', $rule->message());
     }
-
 }

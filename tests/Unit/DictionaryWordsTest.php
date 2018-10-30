@@ -52,5 +52,4 @@ class DictionaryWordsTest extends TestCase
         $rule = (new DictionaryWords());
         $this->assertEquals('The :attribute can not be a dictionary word.', $rule->message());
     }
-
 }
