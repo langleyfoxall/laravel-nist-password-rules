@@ -8,23 +8,24 @@ use PHPUnit\Framework\TestCase;
 
 class PasswordRulesTest extends TestCase
 {
-    public function passwordRulesProvider()
+    private function getPasswordRuleSets()
     {
         return [
-            [PasswordRules::register('username')],
-            [PasswordRules::changePassword('username', 'oldPassword')],
-            [PasswordRules::login()],
+            PasswordRules::register('username'),
+            PasswordRules::changePassword('username', 'oldPassword'),
+            PasswordRules::login(),
         ];
     }
 
-    /**
-     * @dataProvider passwordRulesProvider
-     */
-    public function testRuleTypes($passwordRules)
+    public function testRuleTypes()
     {
-        foreach ($passwordRules as $rule) {
-            $validType = is_string($rule) || (is_object($rule) && $rule instanceof Rule);
-            $this->assertTrue($validType, 'Invalid rule type.');
+        $passwordRuleSets = $this->getPasswordRuleSets();
+
+        foreach($passwordRuleSets as $passwordRules) {
+            foreach ($passwordRules as $rule) {
+                $validType = is_string($rule) || (is_object($rule) && $rule instanceof Rule);
+                $this->assertTrue($validType, 'Invalid rule type.');
+            }
         }
     }
 }
