@@ -22,7 +22,7 @@ class PasswordRulesTest extends TestCase
      */
     public function testRuleTypes($passwordRules)
     {
-        foreach($passwordRules as $rule) {
+        foreach ($passwordRules as $rule) {
             $validType = is_string($rule) || (is_object($rule) && $rule instanceof Rule);
             $this->assertTrue($validType, 'Invalid rule type.');
         }
