@@ -43,4 +43,10 @@ class BreachedPasswordsTest extends TestCase
         $password = trim($password);
         return $password;
     }
+
+    public function testMessage()
+    {
+        $rule = (new BreachedPasswords());
+        $this->assertEquals('The :attribute was found in a third party data breach, and can not be used.', $rule->message());
+    }
 }

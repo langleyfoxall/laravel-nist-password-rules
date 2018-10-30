@@ -60,4 +60,10 @@ class ContextSpecificWordsTest extends TestCase
         $this->assertTrue($rule->passes('password', $password));
     }
 
+    public function testMessage()
+    {
+        $rule = (new ContextSpecificWords(self::$username));
+        $this->assertEquals('The :attribute can not contain the word \'\'.', $rule->message());
+    }
+
 }

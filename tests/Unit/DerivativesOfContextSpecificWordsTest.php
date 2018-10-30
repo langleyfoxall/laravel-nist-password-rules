@@ -59,4 +59,10 @@ class DerivativesOfContextSpecificWordsTest extends TestCase
         $this->assertTrue($rule->passes('password', $password));
     }
 
+    public function testMessage()
+    {
+        $rule = (new DerivativesOfContextSpecificWords(self::$username));
+        $this->assertEquals('The :attribute can not be similar to the word \'\'.', $rule->message());
+    }
+
 }
