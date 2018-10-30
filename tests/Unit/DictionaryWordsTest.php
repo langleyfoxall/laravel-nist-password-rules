@@ -1,5 +1,7 @@
 <?php
+
 namespace DivineOmega\PasswordExposed\Tests;
+
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DictionaryWords;
 use PHPUnit\Framework\TestCase;
 
@@ -44,5 +46,4 @@ class DictionaryWordsTest extends TestCase
         $rule = (new DictionaryWords());
         $this->assertTrue($rule->passes('password', $password));
     }
-
 }
