@@ -38,7 +38,6 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
         foreach ($this->words as $word) {
 
             similar_text($value, $word, $percentage);
-            var_dump($percentage);
 
             if ($percentage >= 75) {
                 $this->detectedWord = $word;
