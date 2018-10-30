@@ -27,6 +27,4 @@ class PasswordRulesTest extends TestCase
             $this->assertTrue($validType, 'Invalid rule type.');
         }
     }
-
-
 }
