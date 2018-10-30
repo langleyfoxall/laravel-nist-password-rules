@@ -1,5 +1,7 @@
 <?php
+
 namespace DivineOmega\PasswordExposed\Tests;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
 use PHPUnit\Framework\TestCase;
@@ -58,5 +60,4 @@ class DerivativesOfContextSpecificWordsTest extends TestCase
         $rule = (new DerivativesOfContextSpecificWords(self::$username));
         $this->assertTrue($rule->passes('password', $password));
     }
-
 }

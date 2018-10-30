@@ -1,5 +1,7 @@
 <?php
+
 namespace DivineOmega\PasswordExposed\Tests;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\ContextSpecificWords;
 use PHPUnit\Framework\TestCase;
@@ -59,5 +61,4 @@ class ContextSpecificWordsTest extends TestCase
         $rule = (new ContextSpecificWords(self::$username));
         $this->assertTrue($rule->passes('password', $password));
     }
-
 }
