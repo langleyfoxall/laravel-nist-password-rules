@@ -21,7 +21,7 @@ class PasswordRulesTest extends TestCase
     {
         $passwordRuleSets = $this->getPasswordRuleSets();
 
-        foreach($passwordRuleSets as $passwordRules) {
+        foreach ($passwordRuleSets as $passwordRules) {
             foreach ($passwordRules as $rule) {
                 $validType = is_string($rule) || (is_object($rule) && $rule instanceof Rule);
                 $this->assertTrue($validType, 'Invalid rule type.');
