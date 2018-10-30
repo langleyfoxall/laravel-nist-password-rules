@@ -21,6 +21,7 @@ class ContextSpecificWords implements Rule
     public function __construct($username)
     {
         $text = '';
+        // @codeCoverageIgnoreStart
         if (function_exists('config')) {
             $text = config('app.name');
             $text .= ' ';
@@ -30,6 +31,7 @@ class ContextSpecificWords implements Rule
                 config('app.url'));
             $text .= ' ';
         }
+        // @codeCoverageIgnoreEnd
         $text .= $username;
 
         $words = explode(' ', strtolower($text));
