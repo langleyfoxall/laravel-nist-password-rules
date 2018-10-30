@@ -12,7 +12,7 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class ContextSpecificWords implements Rule
 {
-    private $words = [];
+    protected $words = [];
     private $detectedWord = null;
 
     /**
@@ -20,13 +20,16 @@ class ContextSpecificWords implements Rule
      */
     public function __construct($username)
     {
-        $text = config('app.name');
-        $text .= ' ';
-        $text .= str_replace(
-            ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
-            ' ',
-            config('app.url'));
-        $text .= ' ';
+        $text = '';
+        if (function_exists('config')) {
+            $text = config('app.name');
+            $text .= ' ';
+            $text .= str_replace(
+                ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
+                ' ',
+                config('app.url'));
+            $text .= ' ';
+        }
         $text .= $username;
 
         $words = explode(' ', strtolower($text));
@@ -37,7 +40,7 @@ class ContextSpecificWords implements Rule
             }
         }
 
-        $this->words = $word;
+        $this->words = $words;
     }
 
     /**

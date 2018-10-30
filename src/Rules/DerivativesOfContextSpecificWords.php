@@ -12,8 +12,16 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class DerivativesOfContextSpecificWords extends ContextSpecificWords implements Rule
 {
-    private $words = [];
     private $detectedWord = null;
+
+    /**
+     * DerivativesOfContextSpecificWords constructor.
+     * @param $username
+     */
+    public function __construct($username)
+    {
+        parent::__construct($username);
+    }
 
     /**
      * Determine if the validation rule passes.
@@ -28,11 +36,10 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
         $value = strtolower($value);
 
         foreach ($this->words as $word) {
-            if (stripos($value, $word) !== false) {
-                return false;
-            }
 
             similar_text($value, $word, $percentage);
+            var_dump($percentage);
+
             if ($percentage >= 75) {
                 $this->detectedWord = $word;
 

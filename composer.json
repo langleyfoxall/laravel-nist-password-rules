@@ -10,8 +10,15 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "illuminate/contracts": "^5.1",
-        "divineomega/laravel-password-exposed-validation-rule": "^1.2"
+        "divineomega/laravel-password-exposed-validation-rule": "^1.2",
+        "illuminate/support": "^5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "fzaninotto/faker": "^1.6",
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "autoload": {
         "psr-4": {
