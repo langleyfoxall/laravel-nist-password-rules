@@ -1,5 +1,7 @@
 <?php
+
 namespace DivineOmega\PasswordExposed\Tests;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\BreachedPasswords;
 use PHPUnit\Framework\TestCase;
@@ -41,6 +43,7 @@ class BreachedPasswordsTest extends TestCase
             $password .= ' ';
         }
         $password = trim($password);
+
         return $password;
     }
 

@@ -1,5 +1,7 @@
 <?php
+
 namespace DivineOmega\PasswordExposed\Tests;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
 use PHPUnit\Framework\TestCase;

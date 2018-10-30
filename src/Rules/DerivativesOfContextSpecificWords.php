@@ -16,6 +16,7 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
 
     /**
      * DerivativesOfContextSpecificWords constructor.
+     *
      * @param $username
      */
     public function __construct($username)
@@ -36,7 +37,6 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
         $value = strtolower($value);
 
         foreach ($this->words as $word) {
-
             similar_text($value, $word, $percentage);
 
             if ($percentage >= 75) {
