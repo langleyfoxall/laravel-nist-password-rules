@@ -6,7 +6,17 @@
 [![Packagist](https://img.shields.io/packagist/dt/langleyfoxall/laravel-nist-password-rules.svg)](https://packagist.org/packages/langleyfoxall/laravel-nist-password-rules/stats)
 
 This package provides Laravel validation rules that follow the password related
-recommendations found in [NIST Special Publication 800-63B section 5](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5).
+recommendations found in [NIST Special Publication 800-63B section 5](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5). 
+
+Laravel NIST Password Rules implements the following recommendations.
+
+| Recommendation  | Implementation  |
+|---|---|
+| [...] at least 8 characters in length | A standard validation rule in all rule sets to validate against this minimum length of 8 characters. |
+| Passwords obtained from previous breach corpuses | The `BreachedPasswords` rule securely checks the password against previous 3rd party data breaches, using the [Have I Been Pwneed - Pwned Passwords](https://haveibeenpwned.com/Passwords) API. |  
+| Dictionary words | The `DictionaryWords` rule checks the password against a list of over 102k dictionary words. | 
+| Context-specific words, such as the name of the service, the username | The `ContextSpecificWords` rule checks the password does not contain the provided username, and any words defined the configured app name or app URL. |
+| Context-specific words, [...] and derivatives thereof | The `DerivativesOfContextSpecificWords` rule checks the password is not too similar to the provided username, and any words defined the configured app name or app URL. |
 
 It also provides methods to return validation rules arrays for various 
 scenarios, such as register, login, and password changes. These arrays can
@@ -38,8 +48,6 @@ the following scenerios.
 * Optionally change password, without old password
 * Login
 
-
-
 See the code below for example usage syntax.
 
 ```php
@@ -57,6 +65,12 @@ $this->validate($request, [
     'password' => PasswordRules::changePassword($request->email, $request->old_password),
 ]);
 
+// Change password, without old password
+$this->validate($request, [
+    'old_password' => 'required',
+    'password' => PasswordRules::changePassword($request->email),
+]);
+
 // Optionally change password, without old password
 $this->validate($request, [
     'old_password' => 'required',
@@ -67,12 +81,6 @@ $this->validate($request, [
 $this->validate($request, [
     'old_password' => 'required',
     'password' => PasswordRules::optionallyChangePassword($request->email, $request->old_password),
-]);
-
-// Change password, without old password
-$this->validate($request, [
-    'old_password' => 'required',
-    'password' => PasswordRules::changePassword($request->email),
 ]);
 
 // Login
