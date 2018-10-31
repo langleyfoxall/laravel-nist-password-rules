@@ -5,9 +5,6 @@
 [![StyleCI](https://github.styleci.io/repos/154853082/shield?branch=master)](https://github.styleci.io/repos/154853082)
 [![Packagist](https://img.shields.io/packagist/dt/langleyfoxall/laravel-nist-password-rules.svg)](https://packagist.org/packages/langleyfoxall/laravel-nist-password-rules/stats)
 
-
-*Work in progress*
-
 This package provides Laravel validation rules that follow the password related
 recommendations found in [NIST Special Publication 800-63B section 5](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5).
 
