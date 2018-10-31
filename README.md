@@ -32,8 +32,8 @@ an array of appropriate validation rules. There are methods available for
 the following scenerios.
 
 * Register
-* Change Password
-* Reset Password
+* Change password, with old password
+* Reset password, without old password
 * Login
 
 See the code below for example usage syntax.
@@ -47,15 +47,15 @@ $this->validate($request, [
     'password' => PasswordRules::register($request->email),
 ]);
 
-// Change Password
+// Change password, with old password
 $this->validate($request, [
     'old_password' => 'required',
     'password' => PasswordRules::changePassword($request->email, $request->old_password),
 ]);
 
-// Reset Password
+// Change password, without old password
 $this->validate($request, [
-    'email' => 'required',
+    'old_password' => 'required',
     'password' => PasswordRules::changePassword($request->email),
 ]);
 

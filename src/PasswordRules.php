@@ -23,16 +23,17 @@ abstract class PasswordRules
         ];
     }
 
-    public static function changePassword($username, $oldPassword)
+    public static function changePassword($username, $oldPassword = null)
     {
-        return array_merge(self::register($username), [
-            'different:'.$oldPassword,
-        ]);
-    }
+        $rules = self::register($username);
 
-    public static function resetPassword($username)
-    {
-        return self::register($username);
+        if ($oldPassword) {
+            $rules = array_merge($rules, [
+                'different:'.$oldPassword,
+            ]);
+        }
+
+        return $rules;
     }
 
     public static function login()
