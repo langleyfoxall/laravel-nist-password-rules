@@ -17,7 +17,15 @@ be passed directly into the Laravel validator.
 
 ## Installation
 
-TODO
+Laravel NIST Password Rules can be easily installed using Composer. Just run the following 
+command from the root of your project.
+
+```bash
+composer require langleyfoxall/laravel-nist-password-rules
+```
+
+If you have never used the Composer dependency manager before, head to the Composer website 
+for more information on how to get started.
 
 ## Usage
 
