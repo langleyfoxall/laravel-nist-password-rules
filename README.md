@@ -29,9 +29,20 @@ for more information on how to get started.
 
 ## Usage
 
-TODO
+To use the Laravel NIST Password Rules in your project, first `use` the 
+`PasswordRules` class, then call the appropriate static methods to return
+an array of appropriate validation rules. There are methods available for 
+the following scenerios.
+
+* Register
+* Change Password
+* Login
+
+See the code below for example usage syntax.
 
 ```php
+use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
+
 // Register
 $this->validate($request, [
     'email' => 'required',
