@@ -33,7 +33,7 @@ the following scenerios.
 
 * Register
 * Change password, with old password
-* Reset password, without old password
+* Change password, without old password
 * Login
 
 See the code below for example usage syntax.
