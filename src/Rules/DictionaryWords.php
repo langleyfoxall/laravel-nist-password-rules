@@ -12,7 +12,7 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class DictionaryWords implements Rule
 {
-    const DICTIONARY_FILE = '/usr/share/dict/words';
+    const DICTIONARY_FILE = __DIR__.'/../../resources/words.txt';
 
     private $words = [];
 
