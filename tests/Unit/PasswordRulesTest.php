@@ -14,6 +14,8 @@ class PasswordRulesTest extends TestCase
             PasswordRules::register('username'),
             PasswordRules::changePassword('username', 'oldPassword'),
             PasswordRules::changePassword('username'),
+            PasswordRules::optionallyChangePassword('username', 'oldPassword'),
+            PasswordRules::optionallyChangePassword('username'),
             PasswordRules::login(),
         ];
     }
