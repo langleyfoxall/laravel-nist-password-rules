@@ -13,6 +13,7 @@ class PasswordRulesTest extends TestCase
         return [
             PasswordRules::register('username'),
             PasswordRules::changePassword('username', 'oldPassword'),
+            PasswordRules::resetPassword('username'),
             PasswordRules::login(),
         ];
     }

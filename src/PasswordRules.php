@@ -30,6 +30,11 @@ abstract class PasswordRules
         ]);
     }
 
+    public static function resetPassword($username)
+    {
+        return self::register($username);
+    }
+
     public static function login()
     {
         return [

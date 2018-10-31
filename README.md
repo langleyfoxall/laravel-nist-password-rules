@@ -33,6 +33,7 @@ the following scenerios.
 
 * Register
 * Change Password
+* Reset Password
 * Login
 
 See the code below for example usage syntax.
@@ -50,6 +51,12 @@ $this->validate($request, [
 $this->validate($request, [
     'old_password' => 'required',
     'password' => PasswordRules::changePassword($request->email, $request->old_password),
+]);
+
+// Reset Password
+$this->validate($request, [
+    'email' => 'required',
+    'password' => PasswordRules::changePassword($request->email),
 ]);
 
 // Login
