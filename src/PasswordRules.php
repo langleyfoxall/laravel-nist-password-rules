@@ -36,6 +36,23 @@ abstract class PasswordRules
         return $rules;
     }
 
+    public static function optionallyChangePassword($username, $oldPassword = null)
+    {
+        $rules = self::changePassword($username, $oldPassword);
+
+        $rules = array_merge($rules, [
+            'nullable',
+        ]);
+
+        foreach ($rules as $key => $rule) {
+            if (is_string($rule) && $rule === 'required') {
+                unset($rules[$key]);
+            }
+        }
+
+        return $rules;
+    }
+
     public static function login()
     {
         return [

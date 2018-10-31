@@ -34,7 +34,11 @@ the following scenerios.
 * Register
 * Change password, with old password
 * Change password, without old password
+* Optionally change password, with old password
+* Optionally change password, without old password
 * Login
+
+
 
 See the code below for example usage syntax.
 
@@ -53,6 +57,18 @@ $this->validate($request, [
     'password' => PasswordRules::changePassword($request->email, $request->old_password),
 ]);
 
+// Optionally change password, without old password
+$this->validate($request, [
+    'old_password' => 'required',
+    'password' => PasswordRules::optionallyChangePassword($request->email),
+]);
+
+// Optionally change password, with old password
+$this->validate($request, [
+    'old_password' => 'required',
+    'password' => PasswordRules::optionallyChangePassword($request->email, $request->old_password),
+]);
+
 // Change password, without old password
 $this->validate($request, [
     'old_password' => 'required',
@@ -65,3 +81,7 @@ $this->validate($request, [
     'password' => PasswordRules::login(),
 ]);
 ```
+
+The `optionallyChangePassword` method supplies validation rules that are
+appropriate for forms in which the password can be optionally changed if 
+filled in.
