@@ -1,4 +1,4 @@
-# Laravel NIST Password Rules
+# 🔒 Laravel NIST Password Rules
 
 [![Build Status](https://travis-ci.org/langleyfoxall/laravel-nist-password-rules.svg?branch=master)](https://travis-ci.org/langleyfoxall/laravel-nist-password-rules)
 [![Coverage Status](https://coveralls.io/repos/github/langleyfoxall/laravel-nist-password-rules/badge.svg?branch=master)](https://coveralls.io/github/langleyfoxall/laravel-nist-password-rules?branch=master)
@@ -33,7 +33,7 @@ the following scenerios.
 
 * Register
 * Change password, with old password
-* Reset password, without old password
+* Change password, without old password
 * Login
 
 See the code below for example usage syntax.
