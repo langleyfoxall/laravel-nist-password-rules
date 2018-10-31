@@ -44,7 +44,7 @@ abstract class PasswordRules
             'nullable',
         ]);
 
-        foreach($rules as $key => $rule) {
+        foreach ($rules as $key => $rule) {
             if (is_string($rule) && $rule === 'required') {
                 unset($rules[$key]);
             }
