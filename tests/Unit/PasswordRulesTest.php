@@ -1,7 +1,5 @@
 <?php
 
-namespace DivineOmega\PasswordExposed\Tests;
-
 use Illuminate\Contracts\Validation\Rule;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 use PHPUnit\Framework\TestCase;
