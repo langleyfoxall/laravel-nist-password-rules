@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\PasswordExposed\Tests;
+namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DictionaryWords;
 use PHPUnit\Framework\TestCase;

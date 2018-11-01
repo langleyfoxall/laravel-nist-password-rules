@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\PasswordExposed\Tests;
+namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\ContextSpecificWords;
