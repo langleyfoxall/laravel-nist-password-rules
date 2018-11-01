@@ -1,5 +1,7 @@
 <?php
 
+namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
 use PHPUnit\Framework\TestCase;

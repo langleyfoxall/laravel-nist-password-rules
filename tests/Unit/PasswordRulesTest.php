@@ -1,5 +1,7 @@
 <?php
 
+namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
+
 use Illuminate\Contracts\Validation\Rule;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 use PHPUnit\Framework\TestCase;

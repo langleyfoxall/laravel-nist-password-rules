@@ -1,5 +1,7 @@
 <?php
 
+namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
+
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\BreachedPasswords;
 use PHPUnit\Framework\TestCase;
