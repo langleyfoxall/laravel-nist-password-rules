@@ -27,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "LangleyFoxall\\LaravelNISTPasswordRules\\Tests\\": "src/Tests/"
+            "LangleyFoxall\\LaravelNISTPasswordRules\\Tests\\": "tests/"
         }
     }
 }
