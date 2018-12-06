@@ -67,20 +67,18 @@ $this->validate($request, [
 
 // Change password, without old password
 $this->validate($request, [
-    'old_password' => 'required',
     'password' => PasswordRules::changePassword($request->email),
-]);
-
-// Optionally change password, without old password
-$this->validate($request, [
-    'old_password' => 'required',
-    'password' => PasswordRules::optionallyChangePassword($request->email),
 ]);
 
 // Optionally change password, with old password
 $this->validate($request, [
     'old_password' => 'required',
     'password' => PasswordRules::optionallyChangePassword($request->email, $request->old_password),
+]);
+
+// Optionally change password, without old password
+$this->validate($request, [
+    'password' => PasswordRules::optionallyChangePassword($request->email),
 ]);
 
 // Login
