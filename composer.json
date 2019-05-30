@@ -28,5 +28,12 @@
         "psr-4": {
             "LangleyFoxall\\LaravelNISTPasswordRules\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LangleyFoxall\\LaravelNISTPasswordRules\\ServiceProvider"
+            ]
+        }
     }
 }
