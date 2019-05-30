@@ -56,6 +56,6 @@ class DerivativesOfContextSpecificWords extends ContextSpecificWords implements 
      */
     public function message()
     {
-        return 'The :attribute can not be similar to the word \''.$this->detectedWord.'\'.';
+        return __('laravel-nist-password-rules::validation.can-not-be-similar-to-word', ['word' => $this->detectedWord]);
     }
 }

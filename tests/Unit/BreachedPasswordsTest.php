@@ -4,10 +4,16 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\BreachedPasswords;
-use PHPUnit\Framework\TestCase;
+use LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 class BreachedPasswordsTest extends TestCase
 {
+    protected function getPackageProviders($app)
+    {
+        return [ServiceProvider::class];
+    }
+
     public function exposedPasswordsProvider()
     {
         return [

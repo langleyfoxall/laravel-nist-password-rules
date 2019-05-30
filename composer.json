@@ -11,14 +11,13 @@
     ],
     "require": {
         "php": ">=7.1",
-        "illuminate/contracts": "^5.1",
-        "divineomega/laravel-password-exposed-validation-rule": "^2.0.1",
-        "illuminate/support": "^5.1"
+        "laravel/framework": "^5.4",
+        "divineomega/laravel-password-exposed-validation-rule": "^2.0.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7",
         "fzaninotto/faker": "^1.6",
-        "php-coveralls/php-coveralls": "^2.0"
+        "php-coveralls/php-coveralls": "^2.0",
+        "orchestra/testbench": "^3.4"
     },
     "autoload": {
         "psr-4": {
@@ -28,6 +27,13 @@
     "autoload-dev": {
         "psr-4": {
             "LangleyFoxall\\LaravelNISTPasswordRules\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LangleyFoxall\\LaravelNISTPasswordRules\\ServiceProvider"
+            ]
         }
     }
 }

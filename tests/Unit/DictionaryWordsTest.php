@@ -3,10 +3,16 @@
 namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DictionaryWords;
-use PHPUnit\Framework\TestCase;
+use LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 class DictionaryWordsTest extends TestCase
 {
+    protected function getPackageProviders($app)
+    {
+        return [ServiceProvider::class];
+    }
+
     public function dictionaryWordsProvider()
     {
         return [

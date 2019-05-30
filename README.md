@@ -34,6 +34,14 @@ composer require langleyfoxall/laravel-nist-password-rules
 If you have never used the Composer dependency manager before, head to the Composer website 
 for more information on how to get started.
 
+Optionally, you may publish the package's translation files with
+the following Artisan command.
+ 
+```bash
+php artisan vendor:publish --provider="LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider"
+```
+ 
+
 ## Usage
 
 To use the Laravel NIST Password Rules in your project, first `use` the 

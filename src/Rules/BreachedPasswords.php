@@ -23,8 +23,6 @@ class BreachedPasswords extends PasswordExposed implements Rule
     {
         parent::__construct($passwordExposedChecker);
 
-        $this->setMessage(
-            'The :attribute was found in a third party data breach, and can not be used.'
-        );
+        $this->setMessage(__('laravel-nist-password-rules::validation.found-in-data-breach'));
     }
 }
