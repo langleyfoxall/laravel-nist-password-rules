@@ -4,24 +4,25 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use Faker\Factory;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
-use PHPUnit\Framework\TestCase;
+use LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 class DerivativesOfContextSpecificWordsTest extends TestCase
 {
     private static $username;
 
-    public function __construct(?string $name = null, array $data = [], string $dataName = '')
+    protected function getPackageProviders($app)
     {
-        parent::__construct($name, $data, $dataName);
-
-        if (!self::$username) {
-            $faker = Factory::create();
-            self::$username = $faker->userName;
-        }
+        return [ServiceProvider::class];
     }
 
     public function contextSpecificWordsProvider()
     {
+        if (!self::$username) {
+            $faker = Factory::create();
+            self::$username = $faker->userName;
+        }
+
         return [
             [self::$username],
             [strtoupper(self::$username)],

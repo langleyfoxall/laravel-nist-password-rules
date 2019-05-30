@@ -4,7 +4,7 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use Illuminate\Contracts\Validation\Rule;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
-use PHPUnit\Framework\TestCase;
+use Orchestra\Testbench\TestCase;
 
 class PasswordRulesTest extends TestCase
 {

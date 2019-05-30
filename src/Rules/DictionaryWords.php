@@ -44,6 +44,6 @@ class DictionaryWords implements Rule
      */
     public function message()
     {
-        return 'The :attribute can not be a dictionary word.';
+        return __('laravel-nist-password-rules::validation.can-not-be-dictionary-word');
     }
 }

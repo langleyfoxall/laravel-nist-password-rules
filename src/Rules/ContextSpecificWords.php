@@ -21,17 +21,13 @@ class ContextSpecificWords implements Rule
     public function __construct($username)
     {
         $text = '';
-        // @codeCoverageIgnoreStart
-        if (function_exists('config')) {
-            $text = config('app.name');
-            $text .= ' ';
-            $text .= str_replace(
-                ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
-                ' ',
-                config('app.url'));
-            $text .= ' ';
-        }
-        // @codeCoverageIgnoreEnd
+        $text = config('app.name');
+        $text .= ' ';
+        $text .= str_replace(
+            ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
+            ' ',
+            config('app.url'));
+        $text .= ' ';
         $text .= $username;
 
         $words = explode(' ', strtolower($text));
@@ -75,6 +71,6 @@ class ContextSpecificWords implements Rule
      */
     public function message()
     {
-        return 'The :attribute can not contain the word \''.$this->detectedWord.'\'.';
+        return __('laravel-nist-password-rules::validation.can-not-contain-word', ['word' => $this->detectedWord]);
     }
 }
