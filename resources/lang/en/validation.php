@@ -5,4 +5,6 @@ return [
     'can-not-be-similar-to-word' => 'The :attribute can not be similar to the word \':word\'.',
     'found-in-data-breach'       => 'The :attribute was found in a third party data breach, and can not be used.',
     'can-not-be-dictionary-word' => 'The :attribute can not be a dictionary word.',
+    'can-not-be-repeatable-characters' => 'The :attribute can not have repeatable characters of 3 or more.',
+    'can-not-be-sequential-characters' => 'The :attribute can not have sequential characters of 3 or more.',
 ];
