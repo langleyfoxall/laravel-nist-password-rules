@@ -2,8 +2,6 @@
 
 namespace LangleyFoxall\LaravelNISTPasswordRules;
 
-use Illuminate\Support\Facades\Lang;
-
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
