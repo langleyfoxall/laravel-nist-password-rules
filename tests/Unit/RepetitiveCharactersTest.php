@@ -1,19 +1,19 @@
 <?php
+
 namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
-use LangleyFoxall\LaravelNISTPasswordRules\Rules\RepeatableCharacters;
+use LangleyFoxall\LaravelNISTPasswordRules\Rules\RepetitiveCharacters;
 use LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-
-class RepeatableCharactersTest extends TestCase
+class RepetitiveCharactersTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
         return [ServiceProvider::class];
     }
 
-    public function repeatableCharactersProvider()
+    public function repetitiveCharactersProvider()
     {
         return [
             ['aaa'],
@@ -24,7 +24,7 @@ class RepeatableCharactersTest extends TestCase
         ];
     }
 
-    public function nonRepeatableCharactersProvider()
+    public function nonRepetitiveCharactersProvider()
     {
         return [
             ['aa'],
@@ -37,27 +37,26 @@ class RepeatableCharactersTest extends TestCase
     }
 
     /**
-     * @dataProvider repeatableCharactersProvider
+     * @dataProvider repetitiveCharactersProvider
      */
     public function testFail($password)
     {
-        $rule = (new RepeatableCharacters());
+        $rule = (new RepetitiveCharacters());
         $this->assertFalse($rule->passes('password', $password));
     }
 
     /**
-     * @dataProvider nonRepeatableCharactersProvider
+     * @dataProvider nonRepetitiveCharactersProvider
      */
     public function testPass($password)
     {
-        $rule = (new RepeatableCharacters());
+        $rule = (new RepetitiveCharacters());
         $this->assertTrue($rule->passes('password', $password));
     }
 
-
     public function testMessage()
     {
-        $rule = (new RepeatableCharacters());
-        $this->assertEquals('The :attribute can not have repeatable characters of 3 or more.', $rule->message());
+        $rule = (new RepetitiveCharacters());
+        $this->assertEquals('The :attribute can not have repetitive characters of 3 or more.', $rule->message());
     }
 }

@@ -5,12 +5,12 @@ namespace LangleyFoxall\LaravelNISTPasswordRules\Rules;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class RepeatableCharacters.
+ * Class RepetitiveCharacters.
  *
- * Implements the 'Repeatable characters' recommendation
+ * Implements the 'Repetitive characters' recommendation
  * from NIST SP 800-63B section 5.1.1.2.
  */
-class RepeatableCharacters implements Rule
+class RepetitiveCharacters implements Rule
 {
 
     /**
@@ -23,7 +23,7 @@ class RepeatableCharacters implements Rule
      */
     public function passes($attribute, $value)
     {
-        return !preg_match('/(.)\1{2,}/',$value);
+        return !preg_match('/(.)\1{2,}/', $value);
     }
 
     /**
@@ -33,6 +33,6 @@ class RepeatableCharacters implements Rule
      */
     public function message()
     {
-        return __('laravel-nist-password-rules::validation.can-not-be-repeatable-characters');
+        return __('laravel-nist-password-rules::validation.can-not-be-repetitive-characters');
     }
 }

@@ -1,10 +1,10 @@
 <?php
+
 namespace LangleyFoxall\LaravelNISTPasswordRules\Tests\Unit;
 
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\SequentialCharacters;
 use LangleyFoxall\LaravelNISTPasswordRules\ServiceProvider;
 use Orchestra\Testbench\TestCase;
-
 
 class SequentialCharactersTest extends TestCase
 {
@@ -53,7 +53,6 @@ class SequentialCharactersTest extends TestCase
         $rule = (new SequentialCharacters());
         $this->assertTrue($rule->passes('password', $password));
     }
-
 
     public function testMessage()
     {

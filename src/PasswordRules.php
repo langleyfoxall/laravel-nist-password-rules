@@ -6,7 +6,7 @@ use LangleyFoxall\LaravelNISTPasswordRules\Rules\BreachedPasswords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\ContextSpecificWords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DictionaryWords;
-use LangleyFoxall\LaravelNISTPasswordRules\Rules\RepeatableCharacters;
+use LangleyFoxall\LaravelNISTPasswordRules\Rules\RepetitiveCharacters;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\SequentialCharacters;
 
 abstract class PasswordRules
@@ -19,7 +19,7 @@ abstract class PasswordRules
             'min:8',
             'confirmed',
             new SequentialCharacters(),
-            new RepeatableCharacters(),
+            new RepetitiveCharacters(),
             new DictionaryWords(),
             new ContextSpecificWords($username),
             new DerivativesOfContextSpecificWords($username),

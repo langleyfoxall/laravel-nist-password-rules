@@ -28,10 +28,10 @@ class SequentialCharacters implements Rule
 
         for ($start = 48; $start <= 88; $start++) {
             $sequence = '';
-            for ($charCode = $start; $charCode < $start+3; $charCode++) {
-            if ($charCode >= 58 && $charCode <= 64) {
-                continue 2;
-            }
+            for ($charCode = $start; $charCode < $start + 3; $charCode++) {
+                if ($charCode >= 58 && $charCode <= 64) {
+                    continue 2;
+                }
                 $sequence .= chr($charCode);
             }
             $group[] = strtolower($sequence);
@@ -39,9 +39,9 @@ class SequentialCharacters implements Rule
         $group[] = '098';
 
         foreach ($group as $needle) {
-          if (strpos($haystack, $needle ) !== false || strpos($haystack, strrev($needle)) !== false) {
-            return false;
-          }
+            if (strpos($haystack, $needle) !== false || strpos($haystack, strrev($needle)) !== false) {
+                return false;
+            }
         }
 
         return true;
