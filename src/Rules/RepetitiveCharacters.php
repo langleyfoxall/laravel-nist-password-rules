@@ -12,7 +12,6 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class RepetitiveCharacters implements Rule
 {
-
     /**
      * Determine if the validation rule passes.
      *

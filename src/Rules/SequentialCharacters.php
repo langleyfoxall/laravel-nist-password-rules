@@ -12,7 +12,6 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class SequentialCharacters implements Rule
 {
-
     /**
      * Determine if the validation rule passes.
      *
