@@ -16,11 +16,11 @@ class SequentialCharactersTest extends TestCase
     public function sequentialCharactersProvider()
     {
         return [
-            ['donkey123'],
-            ['elephantabc'],
-            ['davidcba'],
-            ['what987'],
-            ['yes!!!321'],
+            ['123'],
+            ['12345'],
+            ['abcdef'],
+            ['ghij'],
+            ['321'],
         ];
     }
 
@@ -57,6 +57,6 @@ class SequentialCharactersTest extends TestCase
     public function testMessage()
     {
         $rule = (new SequentialCharacters());
-        $this->assertEquals('The :attribute can not have sequential characters of 3 or more.', $rule->message());
+        $this->assertEquals('The :attribute can not be sequential characters.', $rule->message());
     }
 }
