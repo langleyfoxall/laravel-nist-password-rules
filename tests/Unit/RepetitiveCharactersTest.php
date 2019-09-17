@@ -18,16 +18,16 @@ class RepetitiveCharactersTest extends TestCase
         return [
             ['aaa'],
             ['1111'],
-            ['aaa1111'],
-            ['teeet'],
-            ['l3337'],
+            ['aaaaaaaa'],
+            ['eeeeee'],
+            ['33333'],
         ];
     }
 
     public function nonRepetitiveCharactersProvider()
     {
         return [
-            ['aa'],
+            ['aaaaab'],
             ['112233'],
             ['teeth'],
             ['passwordz'],
@@ -57,6 +57,6 @@ class RepetitiveCharactersTest extends TestCase
     public function testMessage()
     {
         $rule = (new RepetitiveCharacters());
-        $this->assertEquals('The :attribute can not have repetitive characters of 3 or more.', $rule->message());
+        $this->assertEquals('The :attribute can not be repetitive characters.', $rule->message());
     }
 }

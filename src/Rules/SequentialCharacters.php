@@ -12,6 +12,18 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class SequentialCharacters implements Rule
 {
+    const PASSWORDS_FILE = __DIR__.'/../../resources/sequential_passwords.txt';
+
+    private $passwords = [];
+
+    /**
+     * DictionaryWords constructor.
+     */
+    public function __construct()
+    {
+        $this->passwords = explode(PHP_EOL, file_get_contents(self::PASSWORDS_FILE));
+    }
+
     /**
      * Determine if the validation rule passes.
      *
@@ -22,28 +34,7 @@ class SequentialCharacters implements Rule
      */
     public function passes($attribute, $value)
     {
-        $haystack = strtolower($value);
-        $group = [];
-
-        for ($start = 48; $start <= 88; $start++) {
-            $sequence = '';
-            for ($charCode = $start; $charCode < $start + 3; $charCode++) {
-                if ($charCode >= 58 && $charCode <= 64) {
-                    continue 2;
-                }
-                $sequence .= chr($charCode);
-            }
-            $group[] = strtolower($sequence);
-        }
-        $group[] = '098';
-
-        foreach ($group as $needle) {
-            if (strpos($haystack, $needle) !== false || strpos($haystack, strrev($needle)) !== false) {
-                return false;
-            }
-        }
-
-        return true;
+        return !in_array(strtolower(trim($value)), $this->passwords);
     }
 
     /**
