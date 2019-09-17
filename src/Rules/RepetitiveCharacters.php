@@ -12,6 +12,18 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class RepetitiveCharacters implements Rule
 {
+    const PASSWORDS_FILE = __DIR__.'/../../resources/repetitive_passwords.txt';
+
+    private $passwords = [];
+
+    /**
+     * DictionaryWords constructor.
+     */
+    public function __construct()
+    {
+        $this->passwords = explode(PHP_EOL, file_get_contents(self::PASSWORDS_FILE));
+    }
+
     /**
      * Determine if the validation rule passes.
      *
@@ -22,7 +34,7 @@ class RepetitiveCharacters implements Rule
      */
     public function passes($attribute, $value)
     {
-        return !preg_match('/(.)\1{2,}/', $value);
+        return !in_array(strtolower(trim($value)), $this->passwords);
     }
 
     /**
