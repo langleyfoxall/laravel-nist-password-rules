@@ -26,7 +26,8 @@ class ContextSpecificWords implements Rule
         $text .= str_replace(
             ['http://', 'https://', '-', '_', '.com', '.org', '.biz', '.net', '.'],
             ' ',
-            config('app.url'));
+            config('app.url')
+        );
         $text .= ' ';
         $text .= $username;
 
