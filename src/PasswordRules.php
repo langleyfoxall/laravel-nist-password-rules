@@ -11,20 +11,26 @@ use LangleyFoxall\LaravelNISTPasswordRules\Rules\SequentialCharacters;
 
 abstract class PasswordRules
 {
-    public static function register($username)
+    public static function register($username, $requireConfirmation = true)
     {
-        return [
+        $rules = [
             'required',
             'string',
             'min:8',
-            'confirmed',
+        ];
+
+        if ($requireConfirmation) {
+            $rules[] = 'confirmed';
+        }
+
+        return array_merge($rules, [
             new SequentialCharacters(),
             new RepetitiveCharacters(),
             new DictionaryWords(),
             new ContextSpecificWords($username),
             new DerivativesOfContextSpecificWords($username),
             new BreachedPasswords(),
-        ];
+        ]);
     }
 
     public static function changePassword($username, $oldPassword = null)

@@ -68,6 +68,12 @@ $this->validate($request, [
     'password' => PasswordRules::register($request->email),
 ]);
 
+// Register, without requiring password confirmation
+$this->validate($request, [
+    'email' => 'required',
+    'password' => PasswordRules::register($request->email, false),
+]);
+
 // Change password, with old password
 $this->validate($request, [
     'old_password' => 'required',
