@@ -11,7 +11,7 @@ use LangleyFoxall\LaravelNISTPasswordRules\Rules\SequentialCharacters;
 
 abstract class PasswordRules
 {
-    public static function register($username, $confirmation = true)
+    public static function register($username, $requireConfirmation = true)
     {
         $rules = [
             'required',
@@ -19,7 +19,7 @@ abstract class PasswordRules
             'min:8',
         ];
 
-        if ($confirmation) {
+        if ($requireConfirmation) {
             $rules[] = 'confirmed';
         }
 
