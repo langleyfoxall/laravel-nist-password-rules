@@ -21,7 +21,7 @@ class SequentialCharacters implements Rule
      */
     public function __construct()
     {
-        $this->passwords = explode(PHP_EOL, file_get_contents(self::PASSWORDS_FILE));
+        $this->passwords = explode("\n", file_get_contents(self::PASSWORDS_FILE));
     }
 
     /**
