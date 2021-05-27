@@ -21,7 +21,7 @@ class DictionaryWords implements Rule
      */
     public function __construct()
     {
-        $this->words = explode(PHP_EOL, file_get_contents(self::DICTIONARY_FILE));
+        $this->words = explode("\n", file_get_contents(self::DICTIONARY_FILE));
     }
 
     /**
