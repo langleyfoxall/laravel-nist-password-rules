@@ -11,8 +11,7 @@
     ],
     "require": {
         "php": "^7.3||^8.0",
-        "laravel/framework": "^8.39||^9.0",
-        "divineomega/laravel-password-exposed-validation-rule": "^2.4.0"
+        "laravel/framework": "^8.39||^9.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.14.1",
