@@ -2,12 +2,12 @@
 
 namespace LangleyFoxall\LaravelNISTPasswordRules;
 
+use Illuminate\Validation\Rules\Password;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\ContextSpecificWords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DerivativesOfContextSpecificWords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\DictionaryWords;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\RepetitiveCharacters;
 use LangleyFoxall\LaravelNISTPasswordRules\Rules\SequentialCharacters;
-use Illuminate\Validation\Rules\Password;
 
 abstract class PasswordRules
 {
@@ -16,7 +16,7 @@ abstract class PasswordRules
         $rules = [
             'required',
             'string',
-            'min:8',
+            Password::min(8)->uncompromised(),
         ];
 
         if ($requireConfirmation) {
@@ -29,7 +29,6 @@ abstract class PasswordRules
             new DictionaryWords(),
             new ContextSpecificWords($username),
             new DerivativesOfContextSpecificWords($username),
-            Password::uncompromised(),
         ]);
     }
 
