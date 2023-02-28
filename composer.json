@@ -29,6 +29,8 @@
             "LangleyFoxall\\LaravelNISTPasswordRules\\Tests\\": "tests/"
         }
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
