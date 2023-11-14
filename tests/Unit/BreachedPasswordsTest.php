@@ -14,7 +14,7 @@ class BreachedPasswordsTest extends TestCase
         return [ServiceProvider::class];
     }
 
-    public function exposedPasswordsProvider()
+    public static function exposedPasswordsProvider()
     {
         return [
             ['test'],

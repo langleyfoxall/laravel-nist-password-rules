@@ -13,7 +13,7 @@ class DictionaryWordsTest extends TestCase
         return [ServiceProvider::class];
     }
 
-    public function dictionaryWordsProvider()
+    public static function dictionaryWordsProvider()
     {
         return [
             ['test'],
@@ -24,7 +24,7 @@ class DictionaryWordsTest extends TestCase
         ];
     }
 
-    public function nonDictionaryWordsProvider()
+    public static function nonDictionaryWordsProvider()
     {
         return [
             ['test123'],

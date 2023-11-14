@@ -13,7 +13,7 @@ class RepetitiveCharactersTest extends TestCase
         return [ServiceProvider::class];
     }
 
-    public function repetitiveCharactersProvider()
+    public static function repetitiveCharactersProvider()
     {
         return [
             ['aaa'],
@@ -24,7 +24,7 @@ class RepetitiveCharactersTest extends TestCase
         ];
     }
 
-    public function nonRepetitiveCharactersProvider()
+    public static function nonRepetitiveCharactersProvider()
     {
         return [
             ['aaaaab'],

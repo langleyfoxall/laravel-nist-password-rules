@@ -16,7 +16,7 @@ class DerivativesOfContextSpecificWordsTest extends TestCase
         return [ServiceProvider::class];
     }
 
-    public function contextSpecificWordsProvider()
+    public static function contextSpecificWordsProvider()
     {
         if (!self::$username) {
             $faker = Factory::create();
@@ -33,7 +33,7 @@ class DerivativesOfContextSpecificWordsTest extends TestCase
         ];
     }
 
-    public function nonContextSpecificWordsProvider()
+    public static function nonContextSpecificWordsProvider()
     {
         return [
             ['test123'],

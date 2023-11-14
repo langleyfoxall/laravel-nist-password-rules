@@ -13,7 +13,7 @@ class SequentialCharactersTest extends TestCase
         return [ServiceProvider::class];
     }
 
-    public function sequentialCharactersProvider()
+    public static function sequentialCharactersProvider()
     {
         return [
             ['123'],
@@ -24,7 +24,7 @@ class SequentialCharactersTest extends TestCase
         ];
     }
 
-    public function nonSequentialCharactersProvider()
+    public static function nonSequentialCharactersProvider()
     {
         return [
             ['aa'],
