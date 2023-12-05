@@ -12,7 +12,7 @@
     "require": {
         "php": ">=7.2",
         "laravel/framework": "^5.5||^6.0||^7.0||^8.0||^9.0||^10.0",
-        "divineomega/laravel-password-exposed-validation-rule": "^2.5.0"
+        "divineomega/laravel-password-exposed-validation-rule": "v2.6.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.14.1|^1.9.1",
@@ -35,7 +35,14 @@
                 "LangleyFoxall\\LaravelNISTPasswordRules\\ServiceProvider"
             ]
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/laravel-password-exposed-validation-rule",
+            "no-api": true
+        }
+    ]
         
     
 }
