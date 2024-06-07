@@ -12,7 +12,7 @@
     "require": {
         "php": ">=7.2",
         "laravel/framework": "^5.5||^6.0||^7.0||^8.0||^9.0||^10.0||^11.0",
-        "divineomega/laravel-password-exposed-validation-rule": "v2.8.0"
+        "divineomega/laravel-password-exposed-validation-rule": "v3.0.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.14.1|^1.9.1",
@@ -41,8 +41,21 @@
             "type": "vcs",
             "url": "https://github.com/langleyfoxall/laravel-password-exposed-validation-rule",
             "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/password_exposed",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/psr-18-guzzle-adapter",
+            "no-api": true
         }
-    ]
-        
-    
+    ],
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
 }
