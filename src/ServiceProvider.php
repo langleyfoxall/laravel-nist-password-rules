@@ -15,6 +15,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-nist-password-rules'),
+            __DIR__.'/../config/laravel-nist-password-rules.php' => config_path('laravel-nist-password-rules.php'),
         ]);
     }
 
