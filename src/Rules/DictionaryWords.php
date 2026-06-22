@@ -12,8 +12,6 @@ use Illuminate\Contracts\Validation\Rule;
  */
 class DictionaryWords implements Rule
 {
-    const DICTIONARY_FILE = __DIR__.'/../../resources/words.txt';
-
     private $words = [];
 
     /**
@@ -21,7 +19,9 @@ class DictionaryWords implements Rule
      */
     public function __construct()
     {
-        $this->words = explode("\n", file_get_contents(self::DICTIONARY_FILE));
+        $dictionaryFile = config('laravel-nist-password-rules.dictionary_words_file_path');
+
+        $this->words = explode("\n", file_get_contents($dictionaryFile));
     }
 
     /**

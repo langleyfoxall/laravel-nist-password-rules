@@ -35,7 +35,7 @@ composer require langleyfoxall/laravel-nist-password-rules
 If you have never used the Composer dependency manager before, head to the Composer website 
 for more information on how to get started.
 
-Optionally, you may publish the package's translation files with
+Optionally, you may publish the package's translation and config files with
 the following Artisan command.
  
 ```bash
